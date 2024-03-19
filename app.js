@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 const port = 5000;
@@ -8,6 +9,7 @@ let users = [];
 let tweets = [];
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.post("/sign-up", (req, res) => {
   const { username, avatar } = req.body;
